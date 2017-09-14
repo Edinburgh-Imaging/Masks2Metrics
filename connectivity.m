@@ -1,19 +1,19 @@
-%% This function identifies connectivity for a pixel (2D) in a given slice
-%% based on all 8 voxels around it. Connectivity (con) can range from 0 to
-%% 8).
-
 function con = connectivity(x,y,slice,dim)
-
+% This function identifies connectivity for a pixel (2D) in a given slice
+% based on all 8 voxels around it. Connectivity (con) can range from 0 to
+% 8).
+%
 %Inputs: 
 %     x: x-coordinate of pixel being checked for 8-pt connectivity
 %     y: y-coordinate of pixel being checked for 8-pt connectivity
 %     slice: binary matrix of the current slice with pixel (x,y) in it 
 %     dim: dimensions of slice 
-
+%
 % Output:
 %     con: number of pixels to which pixel (x,y) is connected based on
 %     8-point connectivity
-
+%
+% Author: S Mikhael - 26 June 2017
 
 %Initializing variables
 i=1; j=1;
