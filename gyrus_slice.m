@@ -1,9 +1,9 @@
 function [mhd,f,thickness_array_slice_wm_gm, thickness_array_slice_gm_wm,wm_sa,gm_area,filled_ROI] = gyrus_slice(gm_slice,wm_slice,dim,vox_x,vox_y,slice_num,step_size,draw)
-
+%
 %This function measures thickness, surface area, and volume stats of the
 %current slice. 
-
-%Inputs:
+%
+% Inputs:
 %   gm_slice: grey matter mask for the current slice, in the form of a
 %   matrix
 %   wm_slice: white matter mask for the current slice, in the form of a
@@ -17,9 +17,8 @@ function [mhd,f,thickness_array_slice_wm_gm, thickness_array_slice_gm_wm,wm_sa,g
 %   be drawn when measuring thickness. Recommended step size is 3.
 %   draw: 0 if not wanting to show figures of thickness measurements for
 %   every slice, 1 if wanting to show them
-    
-    
-%Outputs: for each ROI
+%        
+% Outputs: for each ROI
 %   mhd: mean Hausdorff distance between the GM and WM curves, in mm
 %   f: Frechet distance between the gm and wm curves, in mm
 %   thickness_array_slice_wm_gm: thickness from the wm to the GM curve,
@@ -31,8 +30,8 @@ function [mhd,f,thickness_array_slice_wm_gm, thickness_array_slice_gm_wm,wm_sa,g
 %   voxel^2.
 %   filled_ROI: the filled in region of interest (ROI), comprising of the
 %   area between the GM and WM curves
-
-
+%
+% Author: S Mikhael - 26 June 2017
 
 %Identify endpoints of GM and WM segmentations, as well as the sequential
 %order of pixels that make up each of these segmentations
