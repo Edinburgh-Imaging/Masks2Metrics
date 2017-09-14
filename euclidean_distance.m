@@ -22,8 +22,8 @@
 %  To Run >> distance = euclidean_distance(Coord1,Coord2)
 %
 %  Example >> distance = euclidean_distance([2,4;5,6],[4,6;5,7]);
-
-%% last line modified by Shadia Mikhael- 13.05.16
+%
+% last line modified by Shadia Mikhael- 13.05.16
 
 function distance = euclidean_distance(Coord1,Coord2)
 if isempty(Coord1) | isempty(Coord2)
