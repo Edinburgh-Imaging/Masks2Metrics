@@ -1,19 +1,19 @@
 function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, segments, roi, hem, step_size, draw)
-%%This is the main function which is used to calculate 3 metrics for a given
-%%ROI. The ROI must be defined by paired nii masks, and drawn continuously
-%%along one direction (x-, y- or z-axis). In the case of the ROI being a
-%%gyrus, the paired masks would be the correspoinding grey matter (GM) and
-%%white matter curves (WM).
-
+%This is the main function which is used to calculate 3 metrics for a given
+%ROI. The ROI must be defined by paired nii masks, and drawn continuously
+%along one direction (x-, y- or z-axis). In the case of the ROI being a
+%gyrus, the paired masks would be the correspoinding grey matter (GM) and
+%white matter curves (WM).
+%
 %Paired ROI nifti (.nii) masks are expected to be of the form
 %subj_roi_hem_gm/wmsegments.nii. An example of a pair corresponding to
 %subject 1's right SFG (superior frontal gyrus would be 1_sfg_r_gm1.nii and
 %1_sfg_r_wm1.nii.
-
+%
 %The ROI metrics outputted are grey matter thickness (GMth), grey matter volume
-%%(GMvol),and white matter surface area (WMsa).
-
-
+%(GMvol),and white matter surface area (WMsa).
+%
+%
 %Inputs
 	%subj: subject number
 	%segments: number of ROI segments making up the ROI. This number will
@@ -29,9 +29,10 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 	%roi_gm_th: grey matter thickness, in mm
 	%roi_gm_vol: grey matter volume, in mm^3
 	%roi_wm_sa: white matter surface area, in mm^2
-    
+%    
 %Example: [s1_sfg_gm_th,s1_sfg_l_gm_vol,s1_sfg_wm_sa] = masks2metrics(1,1,'sfg','l',3,1)
-
+%
+% Author: S Mikhael - 26 June 2017
 
 %Request direction along which the region of interest was drawn in a continuous manner
 prompt = ['Along which direction was the region of interest drawn?\n Please note that this ' ...
