@@ -1,26 +1,25 @@
-%% This function gets the sequential list of nonzero pixels representing a
-%% particular ROI (e.g. WM/GM) in a given nonzero slice 'ROI_slice'. It
-%% starts by identifying the GM and WM lines' corresponding start and
-%% endpoints (in a 2x2 'ends' array). The first of the 2 points in the 'ends'
-%% array is then made the seed point.  The array of sequential points which
-%% make up the GM/WM line is identified and returned, as well as the end
-%% points.
-
-
 function [array,new_ends] = get_sequential_pixels_given_seedpoint(ROI_slice,ends,draw)
-
-
-%Inputs: 
+%
+% This function gets the sequential list of nonzero pixels representing a
+% particular ROI (e.g. WM/GM) in a given nonzero slice 'ROI_slice'. It
+% starts by identifying the GM and WM lines' corresponding start and
+% endpoints (in a 2x2 'ends' array). The first of the 2 points in the 'ends'
+% array is then made the seed point.  The array of sequential points which
+% make up the GM/WM line is identified and returned, as well as the end
+% points.
+%
+% Inputs: 
 %   ROI_slice: matrix reprsentation of the gm/wm mask in current slice
 %   ends: start and points of the gm/wm mask, to be used to identify the
 %   sequence of points making up the mask
 %   draw: for display purposes. 0 doesn't display figures, whereas 1 does.
-
-%Outputs:
+%
+% Outputs:
 %   array: array of x,y coordinates constituting the mask in the current
 %   slice
 %   new_ends: new/final endpoints of the mask in the current slice
-
+%
+% Author: S Mikhael - 26 June 2017
 
 disp('Identifying sequence of points ..');
 hold on
