@@ -1,34 +1,32 @@
 function [xWall,yWall,length_of_perpendicular] = MeasureLength(X1,Y1,x1_point_on_perpendicular, y1_point_on_perpendicular, CombinedImage,vox_x,vox_y,draw)
 
-%% Measure the length of the perpendicular line drawn from (X1,Y1) on one (GM/WM) curve to the corresponding pair (WM/GM curve).
-%% This function is an adaptation of one written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
-%% Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK)
-
-%% This function specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM) at xWall,yWall
-
-%% The perpendicular line with start-point (X1,Y1) and end-point 
-%% (x1_point_on_perpendicular, y1_point_on_perpendicular) is projected
-%% hopefully long enough that it will cross the wall boundary (if present).
-%% The wall boundary will exist with either an intensity value of 2 (=wall)
-%% or 3 (=stent+wall). If there is no wall present, the intensity values
-%% crossed by the perpendicular line will be less than 2 (note: the
-%% intensity values may be 1 at points along the perpendicular line,
-%% signifying parts of the stent boundary, therefore we cannot just look for
-%% intensity values of zero to signify no wall boundary)
-
+% Measure the length of the perpendicular line drawn from (X1,Y1) on one (GM/WM) curve to the corresponding pair (WM/GM curve).
+% This function is an adaptation of one written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
+% Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK).
+% This function specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM) at xWall,yWall
+% The perpendicular line with start-point (X1,Y1) and end-point 
+% (x1_point_on_perpendicular, y1_point_on_perpendicular) is projected
+% hopefully long enough that it will cross the wall boundary (if present).
+% The wall boundary will exist with either an intensity value of 2 (=wall)
+% or 3 (=stent+wall). If there is no wall present, the intensity values
+% crossed by the perpendicular line will be less than 2 (note: the
+% intensity values may be 1 at points along the perpendicular line,
+% signifying parts of the stent boundary, therefore we cannot just look for
+% intensity values of zero to signify no wall boundary)
+%
 %Inputs:
 % X1,Y1: coordinates from which the perpendicular will originate
 % x1_point_on_perpendicular: x coord of the perpendicular's endpoint
 % y1_point_on_perpendicular: y coord of the perpendicular's endpoint
 % CombinedImage: matrix representing the sum of the gm and wm curves
-%vox_x: voxel size along the x/horizontal axis
-%vox_y: voxel size along the y/vertical axis
-%draw: if 0 then don't draw any points, if 1 then do draw
-    
+% vox_x: voxel size along the x/horizontal axis
+% vox_y: voxel size along the y/vertical axis
+% draw: if 0 then don't draw any points, if 1 then do draw
+%    
 %Outputs:
-%    xWall,yWall: x and y coordinates of the intersection between the
-%    perpendicular and the opposite wall/curve
-
+% xWall,yWall: x and y coordinates of the intersection between the
+% perpendicular and the opposite wall/curve
+%
 % There will be 3 outcomes to this function:
 % 1) stent & wall coincide (c==3)
 % 2) wall boundary present (c==2)
