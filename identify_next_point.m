@@ -1,9 +1,10 @@
-%% This function identifies the seed point of a gm/wm mask (line) in a 
-%% given slice, and returns its coordinates. In order for a point to be a 
-%% seed point, its value should be nonzero and its connectivity should equal
-%% 1. This should be the case at either endpoint of the line.
-
-%Inputs:
+function next_point = identify_next_point(temp_slice,current_array,current_order,dim,draw)
+% This function identifies the seed point of a gm/wm mask (line) in a 
+% given slice, and returns its coordinates. In order for a point to be a 
+% seed point, its value should be nonzero and its connectivity should equal
+% 1. This should be the case at either endpoint of the line.
+%
+% Inputs:
 %   temp_slice: matrix representation of the current slice with the
 %   remaining part of the wm/gm mask (the part not yet investigated for
 %   sequence of points)
@@ -11,12 +12,11 @@
 %   current_order: index of the current point
 %   dim: dimensions of current 2d slice
 %   draw: 1 for displaying results, 0 for not displaying them
-
-%Output:
+%
+% Output:
 %   next_point: (x,y) coordinates of the next point in the mask
-
-
-function next_point = identify_next_point(temp_slice,current_array,current_order,dim,draw)
+%
+% Author: S Mikhael - 26 June 2017
 
 %Identify the current point and its connectivity
 current_pt=current_array(current_order,:);
