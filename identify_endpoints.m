@@ -1,23 +1,22 @@
+function [ends] = identify_endpoints(myslice,dim)
 %This function identifies the endpoints of a gm/wm boundary (line) in a 
 %given slice, and returns their coordinates. In order for a point to be a 
 %seed point,its value should be nonzero and its connectivity should equal 1. 
-%This should be the case at either endpoint of the line.
-
-%if connectivity =1 at the endpoints, then the function identify_seed_point
+%This should be the case at either endpoint of the line. 
+%If connectivity =1 at the endpoints, then the function identify_seed_point
 %can be used instead.
-
-%inputs: 
+%
+% Inputs: 
 %   myslice: binary representation of the grey matter/white matter mask in
 %   the current slice
 %   dim: the 3 dimensions of the 3D volume
-
-%output: 
+%
+% Output: 
 %   ends: the two endpoints of the mask for the current slice. In the event
 %   that the mask represented by a curve includes branching, the endpoints
 %   making up the longest path are the ones chosen.
-
-
-function [ends] = identify_endpoints(myslice,dim)
+%
+% Author: S Mikhael - 26 June 2017
 
 disp('Identifying endpoints ..');
 
