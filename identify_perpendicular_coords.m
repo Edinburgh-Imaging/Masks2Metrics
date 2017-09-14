@@ -1,10 +1,9 @@
-%% This function is an adaptation of the function InsideStentBoundary written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
-%% Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK)
-%% The original code used to work only in one direction, but now works in both GM to WM, and WM to GM. 
-%% It specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM)
-
 function [X1,Y1,x1_point_on_perpendicular, y1_point_on_perpendicular] = identify_perpendicular_coords(step_size, l, j, B, X_closest_atY1, Y_closest_atX1)
-
+% This function is an adaptation of the function InsideStentBoundary written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
+% Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK)
+% The original code used to work only in one direction, but now works in both GM to WM, and WM to GM. 
+% It specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM)
+%
 %Inputs:
 % step_size: distance between current point and the point used to draw the
 % perpendicular
@@ -17,12 +16,14 @@ function [X1,Y1,x1_point_on_perpendicular, y1_point_on_perpendicular] = identify
 % to a Y coordinate on the WM/GM curve
 % Y_closest_atX1: the y coord of a point on the GM/WM curve that is closest
 % to an x coordinate on the WM/GM curve
-
+%
 %Outputs:
 % X1: x coord of the perpendicular's startpoint
 % Y1: y coord of the perpendicular's startpoint
 % x1_point_on_perpendicular: x coord of the perpendicular's endpoint
 % y1_point_on_perpendicular: y coord of the perpendicular's endpoint
+%
+% Author: S Mikhael - 26 June 2017
 
 %This checks if the current iteration plus the 'step size' would take the
 %loop outwith the number of elements in the range. If so, it will read the
