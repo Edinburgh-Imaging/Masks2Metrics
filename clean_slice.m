@@ -11,7 +11,8 @@ function cleaned_slice = clean_slice(myslice,dim)
 % Output:
 %   cleaned_slice: a cleaned version of myslice, i.e., this version exludes
 %   any pixels with connectivity 0
-
+%
+% Author: S Mikhael - 26 June 2017
 
 
 %if slice dimensions are valid
