@@ -1,17 +1,18 @@
-%% This function cleans a slice by eliminating all remaining nonzero pixels
-%% with connectivity equal to 0. This may be the case when a line has some
-%% thickness to it or when there are extra voxels in a slice that aren't
-%% connected to others.
-
+function cleaned_slice = clean_slice(myslice,dim)
+% This function cleans a slice by eliminating all remaining nonzero pixels
+% with connectivity equal to 0. This may be the case when a line has some
+% thickness to it or when there are extra voxels in a slice that aren't
+% connected to others.
+%
 % Inputs: 
 %   myslice: matrix representing pixel values of the current slice
 %   dim: dimensions of current slice
-
+%
 % Output:
 %   cleaned_slice: a cleaned version of myslice, i.e., this version exludes
 %   any pixels with connectivity 0
 
-function cleaned_slice = clean_slice(myslice,dim)
+
 
 %if slice dimensions are valid
 if (dim(1) > 0 && dim(2) > 0)
