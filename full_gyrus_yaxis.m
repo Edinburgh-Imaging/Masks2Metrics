@@ -1,23 +1,33 @@
 function [start_slice,stop_slice,thickness_wm_gm,thickness_gm_wm,mhd,f,wm_sa,gm_area,filled_roi] = full_gyrus_yaxis(data_bin_gm,data_bin_wm,dim,vox_x,vox_y,step_size,draw)
 %This function runs when the region of interest (ROI) drawn in the coronal direction, i.e. along the y-axis
-%Outputs for each ROI:
+%
+% Inputs:
+%   data_bin_gm: a binarized version of the gm data
+%   data_bin_wm: a binarized version of the wm data
+%   dim: dimensions of the image
+%   vox_x, vox_y: voxel size along the horizontal and vertical axes
+%   step_size:used to identify the line to which the perpendicular will be drawn when measuring thickness 
+%   draw: 0 if not wanting to show figures of thickness measurements for every slice, 1 if wanting to show them
+%
+% Outputs:
 %   start_slice: the first nonzero slice, i.e., the 1st slice in which the
 %   gyrus appears
 %   stop_slice: the last nonzero slice, i.e., the last slice in which the 
 %   gyrus appears
-%   thickness_wm_gm: thickness array in Euclidedean space, in the wm-to-gm
+%   thickness_wm_gm: thickness array in Euclidean space, in the wm-to-gm
 %   direction (units: mm)
-%   thickness_gm_wm: thickness array in Euclidedean space, in the gm-to-wm
+%   thickness_gm_wm: thickness array in Euclidean space, in the gm-to-wm
 %   direction (units: mm)
-%   mhd: mean Hausdorff distance array, in Euclidedean space (units: mm)
-%   f: Frechet distance, in Euclidedean space (units: mm)
-%   wm_sa:white matter surface area of a given ROI segment, in Euclidedean space (units: mm^2)
+%   mhd: mean Hausdorff distance array, in Euclidean space (units: mm)
+%   f: Frechet distance, in Euclidean space (units: mm)
+%   wm_sa:white matter surface area of a given ROI segment, in Euclidean space (units: mm^2)
 %   gm_area:area covered by grey matter for a given ROI segment, in pixel
 %   space. This is equivalent to grey matter volume of the segment (units:
 %   pixel^3)
 %   filled_roi: the filled roi volume, for a given segment, in the form of
 %   a binary mask
-
+%
+% Author: S Mikhael - 26 June 2017
 
 %initialize variables
 start_slice=0;
