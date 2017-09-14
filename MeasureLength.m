@@ -3,7 +3,8 @@ function [xWall,yWall,length_of_perpendicular] = MeasureLength(X1,Y1,x1_point_on
 % Measure the length of the perpendicular line drawn from (X1,Y1) on one (GM/WM) curve to the corresponding pair (WM/GM curve).
 % This function is an adaptation of one written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
 % Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK).
-% This function specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM) at xWall,yWall
+% This function specifically identifies the coordinates at which the perpendicular, 
+% when drawn from one mask (GM/WM) hits the other (WM/GM) at xWall,yWall.
 % The perpendicular line with start-point (X1,Y1) and end-point 
 % (x1_point_on_perpendicular, y1_point_on_perpendicular) is projected
 % hopefully long enough that it will cross the wall boundary (if present).
