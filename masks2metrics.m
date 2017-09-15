@@ -2,7 +2,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %This is the main function which is used to calculate 3 metrics for a given
 %ROI. The ROI must be defined by paired nii masks, and drawn continuously
 %along one direction (x-, y- or z-axis). In the case of the ROI being a
-%gyrus, the paired masks would be the correspoinding grey matter (GM) and
+%gyrus, the paired masks would be the corresponding grey matter (GM) and
 %white matter curves (WM).
 %
 %Paired ROI nifti (.nii) masks are expected to be of the form
