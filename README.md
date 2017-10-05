@@ -9,6 +9,8 @@ We (the author and contributors) use M2M to compute those metrics on images comi
 
 ## Installation instructions
 
+Download M2M into a folder called Masks2Metrics. In addition to the Masks2Metrics code, the folder includes external code that is called by the tool, including Nifti Matlab tools and pre-existing distance code (Frechet and the Modified Hausdorff Distance).
+Add the Masks2Metrics folder and subfolders to your list of Matlab paths - to start call XXXX
 
 ## Author
 Shadia Mikhael, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.
