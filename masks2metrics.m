@@ -32,8 +32,27 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %    
 %Example: [s1_sfg_gm_th,s1_sfg_l_gm_vol,s1_sfg_wm_sa] = masks2metrics(1,1,'sfg','l',3,1)
 %
-% Author: S Mikhael - 26 June 2017
+%    Copyright (C) 2017 S. Mikhael, 26 June 2017
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
 
+% GNU GPL text
+fprintf(['Masks2Metrics  Copyright (C) 2017  S. Mikhael. This program comes with ABSOLUTELY NO WARRANTY;'...
+    '\n This is free software, and you are welcome to redistribute it'...
+    '\n under certain conditions; See Readme.txt for details \n \n']);
+    
 %Request direction along which the region of interest was drawn in a continuous manner
 prompt = ['Along which direction was the region of interest drawn?\n Please note that this ' ...
     'needs to have been done in a continuous manner. Press:'...
