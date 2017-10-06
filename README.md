@@ -1,5 +1,9 @@
 # Masks2Metrics (M2M)
-Software provided under Creative Commons Attribution Share Alike 4.0 licence see https://github.com/Edinburgh-Imaging/Masks2Metrics/blob/master/license.txt
+
+Copyright (C) 2017 S. Mikhael, 26 June 2017
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. For more details see the license.txt file and <http://www.gnu.org/licenses>.
 
 ## What is M2M for?
 
