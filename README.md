@@ -20,10 +20,10 @@ Add the Masks2Metrics folder and subfolders to your list of Matlab paths - to st
 Shadia Mikhael, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.
 
 ## Contributors
-Calhum Gray, Clinical Research Imaging Centre, University of Edinburgh, Edinburgh, UK.
-Maria del C. Valdés Hernández, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.
-Corne, Hoogendoorn, Toshiba Medical Visualization Systems Edinburgh, Edinburgh, UK
-Cyril R. Pernet, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.
+Calhum Gray, Clinical Research Imaging Centre, University of Edinburgh, Edinburgh, UK.  
+Maria del C. Valdés Hernández, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
+Corne, Hoogendoorn, Toshiba Medical Visualization Systems Edinburgh, Edinburgh, UK  
+Cyril R. Pernet, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
 
 
 
