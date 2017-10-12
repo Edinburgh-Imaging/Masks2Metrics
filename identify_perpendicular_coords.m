@@ -23,7 +23,7 @@ function [X1,Y1,x1_point_on_perpendicular, y1_point_on_perpendicular] = identify
 % x1_point_on_perpendicular: x coord of the perpendicular's endpoint
 % y1_point_on_perpendicular: y coord of the perpendicular's endpoint
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 %This checks if the current iteration plus the 'step size' would take the
 %loop outwith the number of elements in the range. If so, it will read the
