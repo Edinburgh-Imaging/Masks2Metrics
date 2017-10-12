@@ -31,7 +31,7 @@ function [mhd,f,thickness_array_slice_wm_gm, thickness_array_slice_gm_wm,wm_sa,g
 %   filled_ROI: the filled in region of interest (ROI), comprising of the
 %   area between the GM and WM curves
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 %Identify endpoints of GM and WM segmentations, as well as the sequential
 %order of pixels that make up each of these segmentations
