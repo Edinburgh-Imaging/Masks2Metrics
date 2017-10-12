@@ -17,7 +17,7 @@ function [X_closest, Y_closest] = find_closestY_at_X1(X1,Y1,curve)
 %   X_closest: the corresponding x-coordinate of the voxel on 'curve' (i.e., the GM/WM
 %   mask) that is closest to X1
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 Xcurve_array = curve(:,1); %identify all x coordinates of the curve array
 Xarray = abs(Xcurve_array-X1); %taking the difference to identify the closest coords to X1, i.e., with min distance to X1
