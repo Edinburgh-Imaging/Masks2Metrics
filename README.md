@@ -17,13 +17,13 @@ Download M2M into a folder called Masks2Metrics. In addition to the Masks2Metric
 Add the Masks2Metrics folder and subfolders to your list of Matlab paths - to start call masks2metrics.
 
 ## Authors
-Shadia Mikhael, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
-Calum Gray, Clinical Research Imaging Centre, University of Edinburgh, Edinburgh, UK.  
+Shadia Mikhael, Edinburgh Imaging, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
+Calum Gray, Edinburgh Imaging and Edinburgh Clinical Research Facility, University of Edinburgh, Edinburgh, UK.  
 
 ## Contributors
-Maria del C. Valdés Hernández, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
+Maria del C. Valdés Hernández, Edinburgh Imaging, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
 Corne, Hoogendoorn, Toshiba Medical Visualization Systems Edinburgh, Edinburgh, UK.  
-Cyril R. Pernet, Neuroimaging Sciences, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
+Cyril R. Pernet, Edinburgh Imaging, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
 
 
 
