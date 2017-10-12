@@ -19,7 +19,7 @@ function [array,new_ends] = get_sequential_pixels_given_seedpoint(ROI_slice,ends
 %   slice
 %   new_ends: new/final endpoints of the mask in the current slice
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 disp('Identifying sequence of points ..');
 hold on
