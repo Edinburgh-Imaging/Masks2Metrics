@@ -32,7 +32,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %    
 %Example: [s1_sfg_gm_th,s1_sfg_l_gm_vol,s1_sfg_wm_sa] = masks2metrics(1,1,'sfg','l',3,1)
 %
-%    Copyright (C) 2017 S. Mikhael, 26 June 2017
+%    Masks2Metrics Copyright (C) 2017 S. Mikhael, 26 June 2017
 %
 %    This program is free software: you can redistribute it and/or modify
 %    it under the terms of the GNU General Public License as published by
@@ -91,15 +91,27 @@ for seg=1:1:segments
     ROI_hem_wm=strcat(num2str(subj),'_',roi,'_',hem,'_wm',num2str(seg));
 
 
-%%%code for Matlab2015 and higher
-%Read the nifti GM and WM masks and load their corresponding data and
-%metadata
-[data,dim,vox,type]=read_nifti_volume(ROI_hem_gm);
-data_bin_gm=logical(data); %binarize data
+	%code for Matlab2015 and higher
+	%Read the nifti GM and WM masks and load their corresponding data and
+	%metadata
 
+	%Outer (GM) mask - data and metadata
+	ROI_hem_gm_nii=strcat(ROI_hem_gm,'.nii');
+	nii = load_nii(ROI_hem_gm_nii); % load file data and metadata into the structure nii
+	dim = nii.hdr.dime.dim(2:5); % get image dimensions
+	vox = nii.hdr.dime.pixdim(2:5); % get voxel dimensions
+	type = nii.filetype; % get file type
+	data = nii.img; % get data
+	data_bin_gm=logical(data); %binarize data
 
-[data,dim,vox,type]=read_nifti_volume(ROI_hem_wm);
-data_bin_wm=logical(data); %binarize data
+	%Inner (WM) mask - data (and metadata)
+	ROI_hem_wm_nii=strcat(ROI_hem_wm,'.nii');
+	nii = load_nii(ROI_hem_wm_nii); % load file data and metadata into the structure nii
+	%dim = nii.hdr.dime.dim(2:5); % get image dimensions
+	%vox = nii.hdr.dime.pixdim(2:5); % get voxel dimensions
+	%type = nii.filetype; % get file type
+	data = nii.img; % get data
+	data_bin_wm=logical(data); %binarize data
 
     %switch case based on the direction in which masks were drawn
     switch direction
