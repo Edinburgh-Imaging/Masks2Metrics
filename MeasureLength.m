@@ -33,6 +33,9 @@ function [xWall,yWall,length_of_perpendicular] = MeasureLength(X1,Y1,x1_point_on
 % 1) stent & wall coincide (c==3)
 % 2) wall boundary present (c==2)
 % 3) no wall ('catch-all')
+%
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
+
 
 % Search along line
 [cx,cy,c] = improfile(CombinedImage,[X1,x1_point_on_perpendicular],[Y1,y1_point_on_perpendicular],100);
