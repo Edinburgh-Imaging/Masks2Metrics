@@ -15,7 +15,7 @@
 %   Y_closest: the y-coordinate of the voxel on 'curve' (i.e., the GM/WM
 %   mask) that is closest to Y1
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 function [X_closest, Y_closest] = find_closestX_at_Y1(X1,Y1,curve)
 
