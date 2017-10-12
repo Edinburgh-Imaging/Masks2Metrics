@@ -16,7 +16,7 @@ function next_point = identify_next_point(temp_slice,current_array,current_order
 % Output:
 %   next_point: (x,y) coordinates of the next point in the mask
 %
-% Author: S Mikhael - 26 June 2017
+% Masks2Metrics Copyright (C) 2017 S. Mikhael
 
 %Identify the current point and its connectivity
 current_pt=current_array(current_order,:);
