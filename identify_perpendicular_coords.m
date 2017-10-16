@@ -1,6 +1,7 @@
 function [X1,Y1,x1_point_on_perpendicular, y1_point_on_perpendicular] = identify_perpendicular_coords(step_size, l, j, B, X_closest_atY1, Y_closest_atX1)
-% This function is an adaptation of the function InsideStentBoundary written by C Gray (CRIC, University of Edinburgh, Scotland, UK) with his permission
-% Code adapted by S Mikhael (CCBS, University of Edinburgh, Scotland, UK)
+% This function is an adaptation of the function InsideStentBoundary written by C Gray (Edinburgh Imaging and Edinburgh Clinical Research Facility, 
+% University of Edinburgh, Scotland, UK) with his permission.
+% Code adapted by S Mikhael (Edinburgh Imaging, Centre for Clinical Brain Sciences, University of Edinburgh, Scotland, UK).
 % The original code used to work only in one direction, but now works in both GM to WM, and WM to GM. 
 % It specifically identifies the coordinates at which the perpendicular, when drawn from one mask (GM/WM) hits the other (WM/GM)
 %
