@@ -12,7 +12,7 @@ function cleaned_slice = clean_slice(myslice,dim)
 %   cleaned_slice: a cleaned version of myslice, i.e., this version exludes
 %   any pixels with connectivity 0
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 
 %if slice dimensions are valid
