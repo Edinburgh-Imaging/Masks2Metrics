@@ -27,7 +27,7 @@ function [start_slice,stop_slice,thickness_wm_gm,thickness_gm_wm,mhd,f,wm_sa,gm_
 %   filled_roi: the filled roi volume, for a given segment, in the form of
 %   a binary mask
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 %initialize variables
 start_slice=0;
