@@ -16,7 +16,7 @@ function [ends] = identify_endpoints(myslice,dim)
 %   that the mask represented by a curve includes branching, the endpoints
 %   making up the longest path are the ones chosen.
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 disp('Identifying endpoints ..');
 
