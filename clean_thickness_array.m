@@ -13,7 +13,7 @@ function [thickness_array] = clean_thickness_array(thickness_array)
 %previous and next thickness have been replaced by a value equal to the
 %mean of the two, i.e., (previous thickness + next thickness)/2
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 %if array has more than 3 thickness readings, check thicknesses
 if size(thickness_array,1)>3
