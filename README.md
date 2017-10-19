@@ -14,7 +14,7 @@ We (the authors and contributors) use M2M to compute those metrics on images acq
 
 ## Installation instructions
 
-Download M2M into a folder called Masks2Metrics. In addition to the Masks2Metrics code, the folder includes external code that is called by the tool, including a Euclidean distance function, NIfTI Matlab tools and pre-existing distance code (Fréchet and the Modified Hausdorff Distance).
+Download M2M into a folder called Masks2Metrics. In addition to the Masks2Metrics code, the folder includes external code that is called by the tool, including a NIfTI Matlab tools and pre-existing distance code (Euclidean, Fréchet and the Modified Hausdorff Distance).
 
 Add the Masks2Metrics folder and subfolders to your list of Matlab paths. To generate the metrics call masks2metrics as detailed in the Wiki.
 
