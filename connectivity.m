@@ -13,7 +13,7 @@ function con = connectivity(x,y,slice,dim)
 %     con: number of pixels to which pixel (x,y) is connected based on
 %     8-point connectivity
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 %Initializing variables
 i=1; j=1;
