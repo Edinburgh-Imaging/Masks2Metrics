@@ -23,7 +23,9 @@
 %
 %  Example >> distance = euclidean_distance([2,4;5,6],[4,6;5,7]);
 %
-% last line modified by Shadia Mikhael- 13.05.16
+% Function downloaded from Matlab Central 
+% https://uk.mathworks.com/matlabcentral/fileexchange/4294-minimum-distance-calculations-between-2-groups-of-pixels?focused=5055089&tab=function
+% Last line modified by S. Mikhael- 13.05.16
 
 function distance = euclidean_distance(Coord1,Coord2)
 if isempty(Coord1) | isempty(Coord2)
