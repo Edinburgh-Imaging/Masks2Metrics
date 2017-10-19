@@ -22,7 +22,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 	%roi: region of interest, e.g. gyrus' name
 	%hem: left ('l') or right ('r') hemisphere
 	%step_size: used to identify the line to which the perpendicular will
-	%be drawn when measuring thickness. Recommended step size is 3.
+ 	%be drawn when measuring thickness. Recommended step size is 3.
 	%draw: 0 if not wanting to show figures of thickness measurements for
 	%every slice, 1 if wanting to show them
 %Outputs:
@@ -32,7 +32,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %    
 %Example: [s1_sfg_gm_th,s1_sfg_l_gm_vol,s1_sfg_wm_sa] = masks2metrics(1,1,'sfg','l',3,1)
 %
-%    Masks2Metrics Copyright (C) 2017 S. Mikhael, 26 June 2017
+%    Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 %
 %    This program is free software: you can redistribute it and/or modify
 %    it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %
 
 % GNU GPL text
-fprintf(['Masks2Metrics  Copyright (C) 2017  S. Mikhael. This program comes with ABSOLUTELY NO WARRANTY;'...
+fprintf(['Masks2Metrics  Copyright (C) 2017  S. Mikhael and C. Gray. This program comes with ABSOLUTELY NO WARRANTY;'...
     '\n This is free software, and you are welcome to redistribute it'...
     '\n under certain conditions; See license.txt for details \n \n']);
     
