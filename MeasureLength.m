@@ -34,7 +34,7 @@ function [xWall,yWall,length_of_perpendicular] = MeasureLength(X1,Y1,x1_point_on
 % 2) wall boundary present (c==2)
 % 3) no wall ('catch-all')
 %
-% Masks2Metrics Copyright (C) 2017 S. Mikhael
+% Masks2Metrics Copyright (C) 2017 S. Mikhael and C. Gray
 
 
 % Search along line
