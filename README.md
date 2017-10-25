@@ -6,7 +6,7 @@ Copyright (C) 2017 S. Mikhael and C. Gray.
 - [What is M2M for](#M2M)  
 - [License](#License)
 - [Installation Instructions](#Installation)  
-- [Getting started](#Start)  
+- [Getting Started](#Start)  
 - [Authors](#Authors)
 - [Contributors](#Contributors)
 - [Contributing](#Contributing)  
