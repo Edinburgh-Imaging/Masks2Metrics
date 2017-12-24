@@ -9,7 +9,7 @@ authors:
    orcid: 
    affiliation: 1
  - name: Calum Gray
-   affiliation: 1,2
+   affiliation: "1, 2"
 affiliations:
  - name: Edinburgh Imaging, The Chancellor’s Building, 1st floor, FU303e, 49 Little France Crescent, Edinburgh, Scotland, UK, EH16 4SB.
    index: 1
