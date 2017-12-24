@@ -77,6 +77,7 @@ if(draw) %draw=1
     fprintf(['\n\nWARNING: you have set the variable ''draw'' to 1, so Masks2Metrics',...
           '\n will generate and display 2 figures for each of the %d segments,',...
         '\n for every slice in which these segments appear. ',...
+	'\n Please refer to the Wiki for more information on the content of the figures.',...
         '\n\nPress:',...
         '\n\t - Ctrl + C to quit and change ''draw'' to 0, or',...
         '\n\t - any key to continue'], segments);
@@ -196,6 +197,7 @@ save_nii(filename_filled,filled_name_nii);
 %rename variable below for the sake of clarity
 total_gm_vol=total_gm_area; % sum of GM areas/slice makes up GMV of that roi
 
+fprintf('\nCalculating and saving %s thickness, volume, and surface area measurements...',roi)
 
 %get the mean and maximum of the Frechet and mean Hausdorff distances
 %of each slice. This gives us the mean Frechet and mean mhd across the
@@ -209,7 +211,6 @@ fprintf('\nTotal mean modified Hausdorff distance of %s: %2.2f mm',roi,mean_tota
 max_total_f = max(total_f);
 max_total_mhd = max(total_mhd);
 
-fprintf('\nSaving %s thickness, volume, and surface area measurements...',roi)
 %save thickness data to file
 filename1 = strcat(int2str(subj),'_',roi,'_',hem,'_thickness_WMtoGM_step',int2str(step_size),'.mat');
 save(filename1,'total_thickness_wm_gm');
@@ -242,7 +243,11 @@ save(filename6,'total_gm_vol');
 roi_wm_sa = sum(total_wm_sa);
 roi_gm_vol= sum(total_gm_vol);
 fprintf('\nTotal surface area of the %s: %.2f mm^2',roi,roi_wm_sa);
+filename = strcat(int2str(subj),'_',roi,'_',hem,'_total_WM_sa_step',int2str(step_size),'.mat');
+save(filename,'roi_wm_sa');
 fprintf('\nTotal volume of the %s: %.2f mm^3',roi,roi_gm_vol);
+filename = strcat(int2str(subj),'_',roi,'_',hem,'_total_GM_vol_step',int2str(step_size),'.mat');
+save(filename,'roi_gm_vol');
 
 %% Some statistics on the thickness metrics: mean, median and trim mean (at 20%)
 
@@ -252,6 +257,8 @@ mean_thickness_wm_gm = mean(nonzeros(total_thickness_wm_gm));
 mean_thickness_gm_wm = mean(nonzeros(total_thickness_gm_wm));
 roi_gm_mean_thickness = mean(nonzeros([mean_thickness_wm_gm mean_thickness_gm_wm]));
 fprintf('\nTotal nonzero mean thickness of the %s: %2.2f mm',roi,roi_gm_mean_thickness);
+filename = strcat(int2str(subj),'_',roi,'_',hem,'_total_thickness_step',int2str(step_size),'.mat');
+save(filename,'roi_gm_mean_thickness');
 
 trim_mean_thickness_wm_gm = trimmean(total_thickness_wm_gm,20);
 trim_mean_thickness_gm_wm = trimmean(total_thickness_gm_wm,20);
