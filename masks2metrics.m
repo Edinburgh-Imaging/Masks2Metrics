@@ -256,12 +256,12 @@ fprintf('\nTotal nonzero mean thickness of the %s: %2.2f mm',roi,roi_gm_mean_thi
 trim_mean_thickness_wm_gm = trimmean(total_thickness_wm_gm,20);
 trim_mean_thickness_gm_wm = trimmean(total_thickness_gm_wm,20);
 roi_gm_trim_mean_thickness = mean(nonzeros([trim_mean_thickness_wm_gm,trim_mean_thickness_gm_wm]));
-fprintf('\nTotal nonzero trim (at 20%%) mean thickness of the %s: %2.2f mm',roi,roi_gm_trim_mean_thickness);
+%fprintf('\nTotal nonzero trim (at 20%%) mean thickness of the %s: %2.2f mm',roi,roi_gm_trim_mean_thickness);
 
 median_thickness_wm_gm = median(nonzeros(total_thickness_wm_gm));
 median_thickness_gm_wm = median(nonzeros(total_thickness_gm_wm));
 roi_gm_median_thickness = median(nonzeros([median_thickness_wm_gm,median_thickness_gm_wm]));
-fprintf('\nTotal nonzero median thickness of the %s: %2.2f mm',roi,roi_gm_mean_thickness);
+%fprintf('\nTotal nonzero median thickness of the %s: %2.2f mm',roi,roi_gm_mean_thickness);
 
 
 end
