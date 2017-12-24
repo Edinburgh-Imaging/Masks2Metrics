@@ -42,7 +42,7 @@ function [roi_gm_mean_thickness, roi_gm_vol, roi_wm_sa] = masks2metrics(subj, se
 %    This program is distributed in the hope that it will be useful,
 %    but WITHOUT ANY WARRANTY; without even the implied warranty of
 %    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%    GNU General Public License for more details.
+%%    GNU General Public License for more details.
 %
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -71,8 +71,19 @@ while (direction~=1&&direction~=2&&direction~=3)
     direction = input(prompt);
 end
 
+%if draw=1, print warning reminding user that figures will be generated and displayed. They can
+%quit or press any key to continue.
+if(draw) %draw=1
+    fprintf(['\n\nWARNING: you have set the variable ''draw'' to 1, so Masks2Metrics',...
+          '\n will generate and display 2 figures for each of the %d segments,',...
+        '\n for every slice in which these segments appear. ',...
+        '\n\nPress:',...
+        '\n\t - Ctrl + C to quit and change ''draw'' to 0, or',...
+        '\n\t - any key to continue'], segments);
+    pause
+end
 
-disp(['Preparing ' roi ' for subject ' num2str(subj) '... ']);
+disp(['\nPreparing ' roi ' for subject ' num2str(subj) '... ']);
  
 %Initializing variables for the entire gyrus: thickness, mean Hausdorff 
 %distance, Frechet's distance
@@ -178,6 +189,7 @@ total_wm_sa = total_wm_sa * vox_z;
 total_filled_roi=double(total_filled_roi);
 filled_name = strcat(int2str(subj),'_',roi,'_',hem,'_filled_step',int2str(step_size));
 filename_filled=make_nii(total_filled_roi,[1 1 2],[0 0 0],2,'binary file');
+fprintf('\nWriting binary representing the filled %s volume...',roi)
 filled_name_nii=strcat(filled_name,'.nii');
 save_nii(filename_filled,filled_name_nii);
 
@@ -191,29 +203,14 @@ total_gm_vol=total_gm_area; % sum of GM areas/slice makes up GMV of that roi
 
 mean_total_f=mean(total_f);
 mean_total_mhd=mean(total_mhd);
+fprintf('\nTotal mean Frechet thickness of %s: %2.2f mm',roi,mean_total_f);
+fprintf('\nTotal mean modified Hausdorff distance of %s: %2.2f mm',roi,mean_total_mhd);
 
 max_total_f = max(total_f);
 max_total_mhd = max(total_mhd);
 
-
-%write thickness data to file
-%th_range = 'A1';
-
-file1 = strcat(int2str(subj),'_',roi,'_',hem,'_thickness_WMtoGM_step',int2str(step_size),'.xls');
-file2 = strcat(int2str(subj),'_',roi,'_',hem,'_thickness_GMtoWM_step',int2str(step_size),'.xls');
-file3 = strcat(int2str(subj),'_',roi,'_',hem,'_frechet_step',int2str(step_size),'.xls');
-file4 = strcat(int2str(subj),'_',roi,'_',hem,'_modified_hausdorff_step',int2str(step_size),'.xls');
-file5 = strcat(int2str(subj),'_',roi,'_',hem,'_WM_sa_step',int2str(step_size),'.xls');
-file6 = strcat(int2str(subj),'_',roi,'_',hem,'_GM_vol_step',int2str(step_size),'.xls');
-
-xlswrite(file1,total_thickness_wm_gm);
-xlswrite(file2,total_thickness_gm_wm);
-xlswrite(file3,total_f);
-xlswrite(file4,total_mhd);
-xlswrite(file5,total_wm_sa);
-xlswrite(file6,total_gm_vol);
-
-
+fprintf('\nSaving %s thickness, volume, and surface area measurements...',roi)
+%save thickness data to file
 filename1 = strcat(int2str(subj),'_',roi,'_',hem,'_thickness_WMtoGM_step',int2str(step_size),'.mat');
 save(filename1,'total_thickness_wm_gm');
 
@@ -233,15 +230,19 @@ save(filename4,'total_mhd');
 filename4_mean = strcat(int2str(subj),'_',roi,'_',hem,'_mean_modified_hausdorff_step',int2str(step_size),'.mat');
 save(filename4_mean,'mean_total_mhd');
 
+%save ROI total surface area to a file
 filename5 = strcat(int2str(subj),'_',roi,'_',hem,'_WM_sa_step',int2str(step_size),'.mat');
 save(filename5,'total_wm_sa');
 
+%save total ROI volume to a file 
 filename6 = strcat(int2str(subj),'_',roi,'_',hem,'_GM_vol_step',int2str(step_size),'.mat');
 save(filename6,'total_gm_vol');
 
 %Identify total WM_SA & GM vol for the roi in pixel space
 roi_wm_sa = sum(total_wm_sa);
 roi_gm_vol= sum(total_gm_vol);
+fprintf('\nTotal surface area of the %s: %.2f mm^2',roi,roi_wm_sa);
+fprintf('\nTotal volume of the %s: %.2f mm^3',roi,roi_gm_vol);
 
 %% Some statistics on the thickness metrics: mean, median and trim mean (at 20%)
 
@@ -250,15 +251,17 @@ roi_gm_vol= sum(total_gm_vol);
 mean_thickness_wm_gm = mean(nonzeros(total_thickness_wm_gm)); 
 mean_thickness_gm_wm = mean(nonzeros(total_thickness_gm_wm));
 roi_gm_mean_thickness = mean(nonzeros([mean_thickness_wm_gm mean_thickness_gm_wm]));
+fprintf('\nTotal nonzero mean thickness of the %s: %2.2f mm',roi,roi_gm_mean_thickness);
 
 trim_mean_thickness_wm_gm = trimmean(total_thickness_wm_gm,20);
 trim_mean_thickness_gm_wm = trimmean(total_thickness_gm_wm,20);
 roi_gm_trim_mean_thickness = mean(nonzeros([trim_mean_thickness_wm_gm,trim_mean_thickness_gm_wm]));
-
+fprintf('\nTotal nonzero trim (at 20%%) mean thickness of the %s: %2.2f mm',roi,roi_gm_trim_mean_thickness);
 
 median_thickness_wm_gm = median(nonzeros(total_thickness_wm_gm));
 median_thickness_gm_wm = median(nonzeros(total_thickness_gm_wm));
 roi_gm_median_thickness = median(nonzeros([median_thickness_wm_gm,median_thickness_gm_wm]));
+fprintf('\nTotal nonzero median thickness of the %s: %2.2f mm',roi,roi_gm_mean_thickness);
 
 
 end
