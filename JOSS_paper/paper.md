@@ -47,4 +47,4 @@ Maria del C. Valdés Hernández, Edinburgh Imaging, Centre for Clinical Brain Sc
 Corne, Hoogendoorn, Toshiba Medical Visualization Systems Edinburgh, Edinburgh, UK.  
 Cyril R. Pernet, Edinburgh Imaging, Centre for Clinical Brain Sciences, University of Edinburgh, Edinburgh, UK.  
 
-#References
+# References
