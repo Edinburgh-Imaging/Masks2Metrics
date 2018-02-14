@@ -2,6 +2,8 @@
 
 Copyright (C) 2017 S. Mikhael and C. Gray.
 
+[![DOI](http://joss.theoj.org/papers/10.21105/joss.00436/status.svg)](https://doi.org/10.21105/joss.00436)
+
 ## Table of Contents
 - [What is M2M for](#M2M)  
 - [License](#License)
